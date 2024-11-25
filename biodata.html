@@ -50,18 +50,27 @@
         .highlight {
             font-weight: bold;
         }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
         footer {
             text-align: center;
             font-size: 0.9rem;
             color: #777;
             margin-top: 20px;
-        }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -83,45 +92,19 @@
             </ul>
         </section>
         <section>
-            <h2>Educational Background</h2>
+            <h2>Professional Information</h2>
             <ul>
-                <li>
-                    <span class="highlight">CMR Institute of Technology:</span> B.E in Computer Science<br>
-                    Bengaluru | 2026 - Present | <strong>CGPA: 8.9 / 10</strong><br>
-                    <small>Affiliated to Visvesvaraya Technological University</small>
-                </li>
-                <li>
-                    <span class="highlight">Ascent PU College:</span> Pre-University Course (PUC)<br>
-                    Hiriyur | 2022 | <strong>Marks: 92.6%</strong><br>
-                    <small>Department of Pre-University Education</small>
-                </li>
+                <li><span class="highlight">Skills:</span> C, JAVA (DSA), Python (Django), JavaScript, HTML, CSS</li>
+                <li><span class="highlight">Projects:</span> Marketplace, Chat Room, Dormitory Manager, Chatbot</li>
             </ul>
         </section>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li><span class="highlight">Technical Skills:</span> C, JAVA (DSA), Python (Django), JavaScript, HTML, CSS</li>
-                <li><span class="highlight">Non-Technical Skills:</span> Communication, Teamwork, Time Management</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li><span class="highlight">Marketplace:</span> Online platform connecting buyers and sellers.</li>
-                <li><span class="highlight">Chat Room:</span> Real-time chat application for multiple users.</li>
-                <li><span class="highlight">Dormitory Manager:</span> System for managing dormitory resources efficiently.</li>
-                <li><span class="highlight">Simple Chatbot with Gemini AI API:</span> Chatbot solution integrated with Gemini AI API.</li>
-            </ul>
-        </section>
-        <section>
+        <section id="additionalInfo" class="hidden">
             <h2>Hobbies and Interests</h2>
             <ul>
                 <li>Watching movies</li>
                 <li>Exploring Mahabharat Characters</li>
                 <li>Solving questions on DSA</li>
             </ul>
-        </section>
-        <section>
             <h2>Family Details</h2>
             <ul>
                 <li><span class="highlight">Father's Name:</span> Mr. MC Dhruva Kumar</li>
@@ -129,9 +112,25 @@
                 <li><span class="highlight">Siblings:</span> 1 Sister</li>
             </ul>
         </section>
+        <button class="btn" id="seeMoreBtn">See More</button>
         <footer>
             &copy; 2024 MD Ganesha. All rights reserved. 
         </footer>
     </div>
+
+    <script>
+        const seeMoreBtn = document.getElementById('seeMoreBtn');
+        const additionalInfo = document.getElementById('additionalInfo');
+
+        seeMoreBtn.addEventListener('click', () => {
+            if (additionalInfo.classList.contains('hidden')) {
+                additionalInfo.classList.remove('hidden');
+                seeMoreBtn.textContent = 'See Less';
+            } else {
+                additionalInfo.classList.add('hidden');
+                seeMoreBtn.textContent = 'See More';
+            }
+        });
+    </script>
 </body>
 </html>
