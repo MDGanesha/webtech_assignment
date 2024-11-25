@@ -55,6 +55,22 @@
         .project-title {
             font-weight: bold;
         }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
         footer {
             text-align: center;
             font-size: 0.9rem;
@@ -127,15 +143,13 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <section id="additionalInfo" class="hidden">
             <h2>Personal Interests</h2>
             <ul>
                 <li>Watching movies</li>
                 <li>Exploring Mahabharat Characters</li>
                 <li>Solving questions on DSA</li>
             </ul>
-        </section>
-        <section>
             <h2>References</h2>
             <p>
                 Internship Opportunity: A Software Engineering Internship at Joveo Company. <br>
@@ -143,9 +157,25 @@
                 <a href="https://www.linkedin.com/jobs/view/4057777818" target="_blank">LinkedIn Job Post</a>.
             </p>
         </section>
+        <button class="btn" id="seeMoreBtn">See More</button>
         <footer>
             &copy; 2024 MD Ganesha. All rights reserved.
         </footer>
     </div>
+
+    <script>
+        const seeMoreBtn = document.getElementById('seeMoreBtn');
+        const additionalInfo = document.getElementById('additionalInfo');
+
+        seeMoreBtn.addEventListener('click', () => {
+            if (additionalInfo.classList.contains('hidden')) {
+                additionalInfo.classList.remove('hidden');
+                seeMoreBtn.textContent = 'See Less';
+            } else {
+                additionalInfo.classList.add('hidden');
+                seeMoreBtn.textContent = 'See More';
+            }
+        });
+    </script>
 </body>
 </html>
